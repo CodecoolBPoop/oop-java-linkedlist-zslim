@@ -50,7 +50,7 @@ public class LinkedList<T> {
 
     public void remove(T valueToRemove) {
         Node currentNode = head;
-        Node previousNode;
+        Node previousNode = null;
 
         while (!currentNode.next.data.equals(valueToRemove)) {
             previousNode = currentNode;
@@ -62,5 +62,17 @@ public class LinkedList<T> {
         } else {
             previousNode.next = currentNode.next;
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node currentNode = head;
+        sb.append(head.data);
+        do {
+            currentNode = currentNode.next;
+            sb.append(currentNode);
+        } while (currentNode.next != null)
+        return sb.toString();
     }
 }
