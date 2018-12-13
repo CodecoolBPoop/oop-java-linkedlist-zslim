@@ -21,9 +21,11 @@ public class LinkedList<T> {
     }
 
     public LinkedList(T[] values) {
+        length = 0;
         for (T value :
                 values) {
             this.insert(value);
+            length += 1;
         }
     }
 
@@ -72,7 +74,7 @@ public class LinkedList<T> {
         do {
             currentNode = currentNode.next;
             sb.append(currentNode);
-        } while (currentNode.next != null)
+        } while (currentNode.next != null);
         return sb.toString();
     }
 }
