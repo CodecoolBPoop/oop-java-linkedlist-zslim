@@ -73,7 +73,8 @@ public class LinkedList<T> {
         sb.append(head.data);
         do {
             currentNode = currentNode.next;
-            sb.append(currentNode);
+            sb.append(" ");
+            sb.append(currentNode.data);
         } while (currentNode.next != null);
         return sb.toString();
     }
